@@ -29,11 +29,11 @@ Parse.initialize(process.env.PARSE_APP_ID, 'unused', process.env.PARSE_MASTER_KE
 // The logic for this script is just these 8 functions chained in serial promises:
 getServerTriggers()
     .then(getServerFunctions)
+    .then(registerFunctions)
     .then(registerBeforeSaves)
     .then(registerAfterSaves)
     .then(registerBeforeDeletes)
     .then(registerAfterDeletes)
-    .then(registerFunctions)
     .then(function() {
       console.log('Hooks registration completed.');
     });
