@@ -16,7 +16,8 @@ Parse.Cloud.define("hello", function(request, response) {
 
 Parse.Cloud.beforeSave('TestObject', function(request, response) {
   console.log('Ran beforeSave on objectId: ' + request.object.id);
-  response.success();
+  // if update the request object, we need to send it back with the response
+  response.success(request.object);
 });
 
 Parse.Cloud.afterSave('TestObject', function(request, response) {
