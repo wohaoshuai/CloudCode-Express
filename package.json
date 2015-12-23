@@ -5,7 +5,8 @@
   "main": "server",
   "scripts": {
     "start": "node server.js",
-    "register": "node scripts/register-webhooks.js"
+    "register": "node scripts/register-webhooks.js",
+    "record": "node scripts/record-webhooks.js"
   },
   "dependencies": {
     "express": "~4.9.x",

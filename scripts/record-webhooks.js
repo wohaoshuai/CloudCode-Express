@@ -1,7 +1,18 @@
 /*
  This script will process the triggers and functions defined in the node app
  that uses parse-cloud-express middleware and builds webhooks.json
- */
+
+ To register the webhooks using the output of this script:
+ i.e., `npm run record`
+ follow these steps:
+ 1) At the root of your project
+    `parse new -i`
+    * you can select an existing parse app, or create a new one
+    * you can pick any backend provider: heroku or parse
+ 2) Configure the webhooks for your project with Parse using parse cli
+    `parse configure hooks -b https://www.example.com webhooks.json`
+    * if you picked heroku backend you can simply run `parse deploy`
+*/
 
 var Webhooks = require('parse-cloud-express');
 var jsonfile = require('jsonfile')
