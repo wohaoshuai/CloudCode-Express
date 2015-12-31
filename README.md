@@ -38,7 +38,7 @@ ngrok http 5000
 Take the URL provided by ngrok, set it as an environment variable, and run the script to register your webhooks with Parse:
 
 ```
-export HOOKS_URL=https://something.ngrok.io
+export HOOKS_URL=https://something.ngrok.io/
 npm run register
 ```
 
