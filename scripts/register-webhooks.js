@@ -143,7 +143,7 @@ function registerFunctions() {
     }
     promise = promise.then(
         function() {
-          Parse._ajax('POST', path, JSON.stringify(data)).then(
+          return Parse._ajax('POST', path, JSON.stringify(data)).then(
               function (res) {
                 console.log('Registered function for: ' + item);
                 return Parse.Promise.as();
