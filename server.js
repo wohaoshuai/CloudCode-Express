@@ -19,6 +19,12 @@ app.use(express.static(__dirname + '/public'));
 app.all('/', function(request, response) {
   response.status(404).send('Page not found.');
 });
+
+app.post('/twilio', function(request, response) {
+	response.send('hello world');
+});
+
+
 /*
  * Launch the HTTP server
  */
