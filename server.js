@@ -21,7 +21,15 @@ app.all('/', function(request, response) {
 });
 
 app.get('/twilio', function(request, response) {
-	response.send('hello world');
+	Parse.Cloud.run('averageStars', { movie: 'The Matrix' }, {
+  success: function(ratings) {
+    // ratings should be 4.5
+	response.send(ratings);
+  },
+  error: function(error) {
+	response.send(error);
+  }
+  });
 });
 
 
