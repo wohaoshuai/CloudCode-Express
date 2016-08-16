@@ -20,7 +20,7 @@ app.all('/', function(request, response) {
   response.status(404).send('Page not found.');
 });
 
-app.post('/twilio', function(request, response) {
+app.get('/twilio', function(request, response) {
 	response.send('hello world');
 });
 
