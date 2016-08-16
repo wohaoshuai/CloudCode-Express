@@ -21,6 +21,9 @@ app.all('/', function(request, response) {
 });
 
 app.get('/twilio', function(request, response) {
+	Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
+	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
+
 	var TestObject = Parse.Object.extend("Post");
 	var testObject = new TestObject();
 	testObject.save({text: "b1ar"}).then(function(object) {
