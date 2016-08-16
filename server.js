@@ -21,15 +21,11 @@ app.all('/', function(request, response) {
 });
 
 app.get('/twilio', function(request, response) {
-	Parse.Cloud.run('averageStars', { movie: 'The Matrix' }, {
-  success: function(ratings) {
-    // ratings should be 4.5
-	response.send(ratings);
-  },
-  error: function(error) {
-	response.send(error);
-  }
-  });
+	var TestObject = Parse.Object.extend("Post");
+	var testObject = new TestObject();
+	testObject.save({text: "b1ar"}).then(function(object) {
+  		alert("yay! it worked");
+	});
 });
 
 
